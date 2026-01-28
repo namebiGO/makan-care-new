@@ -6,16 +6,25 @@ import Footer from "../footer/Footer";
 
 const MainLayout = () => {
     const location = useLocation();
-    const [loading, setLoading] = useState(true);
     const noHeaderFooterRoutes = ["/login", "/signup"];
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 4000);
+    // Check if this is the first time loading the website
+    const [loading, setLoading] = useState(() => {
+        const hasLoadedBefore = sessionStorage.getItem("hasLoadedBefore");
+        return !hasLoadedBefore; // Show loader only if not loaded before
+    });
 
-        return () => clearTimeout(timer);
-    }, []);
+    useEffect(() => {
+        if (loading) {
+            const timer = setTimeout(() => {
+                setLoading(false);
+                // Mark that the website has been loaded
+                sessionStorage.setItem("hasLoadedBefore", "true");
+            }, 4000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [loading]);
 
     return (
         <>

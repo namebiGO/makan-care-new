@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import { Link } from "react-router-dom";
 import BlogCard from "../../components/BlogCard/BlogCard";
+import { pageTransition } from "../../utils/animations";
 
 import TEAM_IMG_1 from "../../assets/about_1.jpg";
 import TEAM_IMG_2 from "../../assets/about_2.jpg";
@@ -100,7 +102,12 @@ const blogs = [
 
 const About = () => {
     return (
-        <>
+        <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageTransition}
+        >
             <div className="w-full py-5 pt-14 bg-gray-100">
                 <div className="max-w-7xl 3xl:max-w-5xl mx-auto p-4">
                     <div className="flex flex-wrap -mx-2">
@@ -271,7 +278,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </motion.div>
     );
 };
 

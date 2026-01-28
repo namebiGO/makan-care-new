@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Loader from "../../components/Loader/Loader.jsx";
+import { motion } from "framer-motion";
 import Hero from "../../components/hero/Hero";
 import Section1 from "../../components/section1/Section1";
 import LastSection from "../../components/LastSection/LastSection";
@@ -11,10 +11,16 @@ import Testimonial from "../../components/Testimonials/Testimonial.jsx";
 import Features from "../../components/Features/Features.jsx";
 import BlogSection from "../../features/BlogSection/BlogSection.jsx";
 import { services } from "../../mocks/services.js";
+import { pageTransition } from "../../utils/animations.js";
 
 const Home = () => {
     return (
-        <>
+        <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageTransition}
+        >
             <Hero />
             <Features />
             {/* <Section1 /> */}
@@ -27,7 +33,7 @@ const Home = () => {
             <BlogSection />
             <InstagramSection />
             <LastSection />
-        </>
+        </motion.div>
     );
 };
 
