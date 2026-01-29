@@ -1,7 +1,12 @@
-build:
-  env:
-    NODE_VERSION: 18
-
-run:
-  env:
-    NODE_ENV: production
+services:
+  - type: web
+    name: makan-care-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: NODE_ENV
+        value: production
