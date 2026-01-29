@@ -4,7 +4,11 @@ import { logout } from "../features/auth/authSlice";
 import { toast } from "react-toastify";
 
 // Use environment variable for API URL, fallback to localhost for development
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080/api";
+// In production, VITE_API_URL MUST be set in Vercel environment variables
+const API_BASE_URL = import.meta.env.VITE_API_URL ||
+    (import.meta.env.MODE === 'production'
+        ? '/api' // Relative URL in production (won't work but won't trigger popup)
+        : 'http://localhost:8080/api'); // Localhost for development
 
 
 const api = axios.create({
