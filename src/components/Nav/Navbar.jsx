@@ -8,12 +8,18 @@ import menu_icon from "../../assets/Hamburger.png";
 import world_icon from "../../assets/inter-logo.png";
 import down_arrow from "../../assets/small.png";
 import './Navbar.css';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+    const { t, i18n } = useTranslation();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const handleLinkClick = () => {
         setIsMobileMenuOpen(false);
+    };
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
     };
 
     return (
@@ -22,18 +28,8 @@ const Navbar = () => {
                 {/* Top Bar */}
                 <div className="top-bar">
                     <div className="top-links">
-                        <Link to="/help" onClick={handleLinkClick}>Help Center</Link>
-                        <Link to="/tracking" onClick={handleLinkClick}>Order Tracking</Link>
-                    </div>
-                    <div className="top-options">
-                        <div className="language">
-                            <img src={world_icon} alt="Language" className="icon" /> English
-                            <img src={down_arrow} alt="Dropdown" className="icon small-icon" />
-                        </div>
-                        <div className="currency">
-                            AED
-                            <img src={down_arrow} alt="Dropdown" className="icon small-icon" />
-                        </div>
+                        <Link to="/help" onClick={handleLinkClick}>{t('Help Center')}</Link>
+                        <Link to="/tracking" onClick={handleLinkClick}>{t('Order Tracking')}</Link>
                     </div>
                 </div>
 
@@ -43,16 +39,16 @@ const Navbar = () => {
                         <Link to="/" onClick={handleLinkClick}><img src={site_logo} alt="Makan Care Logo" /></Link>
                     </div>
                     <div className="search-bar">
-                        <input type="text" placeholder="Search products here..." />
+                        <input type="text" placeholder={t('Search products here...')} />
                         <button>
                             <img src={search_icon} alt="Search" className="icon" />
-                            SEARCH
+                            {t('SEARCH')}
                         </button>
                     </div>
                     <div className="user-actions">
-                        <Link to="/login" onClick={handleLinkClick}>Login / Register</Link>
-                        <Link to="/wishlist" onClick={handleLinkClick}><img src={heart_icon} alt="Wishlist" className="icon" /></Link>
-                        <Link to="/cart" onClick={handleLinkClick}><img src={cart_icon} alt="Shopping Cart" className="icon" /></Link>
+                        <Link to="/login" onClick={handleLinkClick}>{t('Login / Register')}</Link>
+                        <Link to="/wishlist" onClick={handleLinkClick}><img src={heart_icon} alt={t('Wishlist')} className="icon" /></Link>
+                        <Link to="/cart" onClick={handleLinkClick}><img src={cart_icon} alt={t('Shopping Cart')} className="icon" /></Link>
                     </div>
                     <div className="mobile-menu-icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                         <img src={menu_icon} alt="Menu" className="icon" />
@@ -63,24 +59,24 @@ const Navbar = () => {
                 <div className={`bottom-nav ${isMobileMenuOpen ? 'open' : ''}`}>
                     <button className="categories-btn">
                         <img src={menu_icon} alt="Menu" className="icon" />
-                        SHOP BY CATEGORIES
+                        {t('SHOP BY CATEGORIES')}
                         <img src={down_arrow} alt="Dropdown" className="icon small-icon" />
                     </button>
                     <ul className="nav-links">
                         <li>
-                            <Link to="/" onClick={handleLinkClick}>Home</Link>
+                            <Link to="/" onClick={handleLinkClick}>{t('Home')}</Link>
                         </li>
                         <li>
-                            <Link to="/services" onClick={handleLinkClick}>Services</Link>
+                            <Link to="/services" onClick={handleLinkClick}>{t('Services')}</Link>
                         </li>
                         <li>
-                            <Link to="/new-arrivals" onClick={handleLinkClick}>New Arrivals</Link>
+                            <Link to="/new-arrivals" onClick={handleLinkClick}>{t('New Arrivals')}</Link>
                         </li>
                         <li>
-                            <Link to="/more" onClick={handleLinkClick}>More</Link>
+                            <Link to="/more" onClick={handleLinkClick}>{t('More')}</Link>
                         </li>
                     </ul>
-                    <div className="promo-text">🚀 Free International Delivery</div>
+                    <div className="promo-text">{t('Free International Delivery')}</div>
                 </div>
             </div>
         </div>

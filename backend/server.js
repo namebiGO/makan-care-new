@@ -25,6 +25,7 @@ app.use('/api/services', require('./routes/serviceRoutes'));
 app.use('/api/blogs', require('./routes/blogRoutes'));
 app.use('/api/categories', require('./routes/categoryRoutes'));
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/orders', require('./routes/orderRoutes'));
 
 // For backward compatibility with frontend that uses /api/login and /api/register
 app.post('/api/login', require('./routes/authRoutes'));

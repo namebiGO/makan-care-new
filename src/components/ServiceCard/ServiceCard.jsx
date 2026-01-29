@@ -16,7 +16,7 @@ const ServiceCard = ({ service }) => {
         reviews,
         price,
         duration,
-        services,
+        services: servicesList,
     } = service;
 
     const { handleAddToCart } = useCart();
@@ -38,7 +38,6 @@ const ServiceCard = ({ service }) => {
             <div className="flex justify-between items-start">
                 <div>
                     {/* Header */}
-                    {/* <p className="text-green-600 text-sm font-bold">PACKAGE</p> */}
                     <h2 className="text-lg font-bold mt-1">{title}</h2>
 
                     {/* Rating and Reviews */}
@@ -80,23 +79,8 @@ const ServiceCard = ({ service }) => {
             </div>
             <hr className="my-4 w-40 text-gray-200" />
 
-            {/* Services List */}
-            {/* <ul className="text-gray-700 text-sm">
-                {services &&
-                    services.map((service, index) => (
-                        <li key={index}>
-                            <strong>{service.type}:</strong> {service.details}
-                        </li>
-                    ))}
-            </ul> */}
+            {/* Description */}
             <p className="text-gray-700 text-sm">{description}</p>
-
-            {/* Buttons */}
-            {/* <div className="flex justify-between items-center mt-4">
-                <button className="font-bold border border-gray-400 px-4 py-2 rounded-md text-gray-800">
-                    Edit your package
-                </button>
-            </div> */}
         </motion.div>
     );
 };

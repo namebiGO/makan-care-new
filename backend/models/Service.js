@@ -43,6 +43,10 @@ const serviceSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    image: {
+        type: String,
+        required: false, // Optional for backward compatibility
+    },
     subcategories: [subcategorySchema],
     isActive: {
         type: Boolean,

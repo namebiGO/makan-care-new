@@ -5,20 +5,24 @@ import Subscribe from "../subscribebox/Subscribe";
 import Footbase from "../footersection/Footbase";
 import { Link } from "react-router-dom";
 import { APPROUTES } from "../../constants/routes/appRoutes";
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (
         <div>
             <footer className="footer">
                 <div className="footer-container">
                     {/* Column 1 */}
                     <div className="footer-column">
-                        <h3>Contact Us</h3>
+                        <h3>{t('Contact Us')}</h3>
                         <p>
-                            Classyshop - Mega Super Store
+                            {t('Classyshop - Mega Super Store')}
                             <br />
-                            507-Union Trade Centre
+                            {t('507-Union Trade Centre')}
                             <br />
-                            Riyadh
+                            {t('Riyadh')}
                         </p>
                         <p className="footer-mail">
                             <a href="mailto:support@makancare.com">
@@ -33,39 +37,39 @@ const Footer = () => {
                         <div className="footer-chatbot">
                             <img src={chat_img} alt="" srcset="" />
                             <p>
-                                Online Chat
+                                {t('Online Chat')}
                                 <br />
-                                Get Expert Help
+                                {t('Get Expert Help')}
                             </p>
                         </div>
                     </div>
 
                     {/* Column 2 */}
                     <div className="footer-column">
-                        <h3>Quick Links</h3>
+                        <h3>{t('Quick Links')}</h3>
                         <p>
-                            <Link to={APPROUTES.CONTACT}>Contact Us</Link>
+                            <Link to={APPROUTES.CONTACT}>{t('Contact Us')}</Link>
                         </p>
                         <p>
-                            <Link to={APPROUTES.SERVICES}>Services</Link>
+                            <Link to={APPROUTES.SERVICES}>{t('Services')}</Link>
                         </p>
                         <p>
-                            <Link to={APPROUTES.ABOUT}>About Us</Link>
+                            <Link to={APPROUTES.ABOUT}>{t('About Us')}</Link>
                         </p>
-                        <p>Best Services</p>
+                        <p>{t('Best Services')}</p>
                         {/* <p>Shipping & Delivery</p> */}
                         {/* <p>Returns & Exchanges</p> */}
                     </div>
 
                     {/* Column 3 */}
                     <div className="footer-column">
-                        <h3>Our Company</h3>
-                        <p>Log in</p>
-                        <p>Privacy Policy</p>
-                        <p>Terms & Conditions</p>
+                        <h3>{t('Our Company')}</h3>
+                        <p>{t('Log in')}</p>
+                        <p>{t('Privacy Policy')}</p>
+                        <p>{t('Terms & Conditions')}</p>
                         {/* <p>Contact Us</p> */}
                         {/* <p>Shipping & Delivery</p> */}
-                        <p>Refund Policy</p>
+                        <p>{t('Refund Policy')}</p>
                     </div>
 
                     {/* Column 4 */}

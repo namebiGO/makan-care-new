@@ -13,50 +13,44 @@ const AboutUs = () => {
   return (
     <div>
       <nav className="navbar">
-            <div className="navbar-container">
-              <div className="logo-site">
-                <img src={logo_site} alt="Logo" className="logo" />
+        <div className="navbar-container">
+          <div className="logo-site">
+            <img src={logo_site} alt="Logo" className="logo" />
+          </div>
+          <div className="info-column">
+            <div className="top-row">
+              <a href="#">Help Center</a>
+              <a href="#">Order Tracking</a>
+            </div>
+            <div className="bottom-row">
+              <div className="search-bar">
+                <input type="text" placeholder="Search products here..." />
+                <button>SEARCH</button>
               </div>
-              <div className="info-column">
-                <div className="top-row">
-                  <a href="#">Help Center</a>
-                  <a href="#">Order Tracking</a>
-                  <div className="dropdown">
-                    <span>English ▼</span>
-                  </div>
-                  <div className="dropdown">
-                    <span>USD ▼</span>
-                  </div>
-                </div>
-                <div className="bottom-row">
-                  <div className="search-bar">
-                    <input type="text" placeholder="Search products here..." />
-                    <button>SEARCH</button>
-                  </div>
-                  <a href="#">Login / Register</a>
-                  <div className="icons">
-                    <img src={heart_icon} alt="Wishlist" />
-                    <img src={cart_icon} alt="Cart" />
-                  </div>
-                </div>
+              <a href="#">Login / Register</a>
+              <div className="icons">
+                <img src={heart_icon} alt="Wishlist" />
+                <img src={cart_icon} alt="Cart" />
               </div>
             </div>
-            <div className="navbar-bottom">
-              <div className="categories">
-                <button>SHOP BY CATEGORIES ▼</button>
-              </div>
-              <div className="menu-links">
-                <a href="#">Home</a>
-                <a href="#">Services</a>
-                <a href="#">New Arrivals</a>
-                <a href="#">More</a>
-              </div>
-              <div className="delivery-info">
-                <img src={rocket} alt="Free Delivery" />
-                <span>Free International Delivery</span>
-              </div>
-            </div>
-          </nav>
+          </div>
+        </div>
+        <div className="navbar-bottom">
+          <div className="categories">
+            <button>SHOP BY CATEGORIES ▼</button>
+          </div>
+          <div className="menu-links">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">New Arrivals</a>
+            <a href="#">More</a>
+          </div>
+          <div className="delivery-info">
+            <img src={rocket} alt="Free Delivery" />
+            <span>Free International Delivery</span>
+          </div>
+        </div>
+      </nav>
 
       <div className="content-container">
         <div className="text-columns">

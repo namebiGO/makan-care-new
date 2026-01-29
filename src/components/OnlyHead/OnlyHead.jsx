@@ -18,12 +18,6 @@ const OnlyHead = () => {
             <div className="top-row">
               <a href="#">Help Center</a>
               <a href="#">Order Tracking</a>
-              <div className="dropdown">
-                <span>English</span>
-              </div>
-              <div className="dropdown">
-                <span>AED</span>
-              </div>
             </div>
             <div className="bottom-row">
               <div className="search-bar">

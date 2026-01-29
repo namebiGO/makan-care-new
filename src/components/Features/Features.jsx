@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import TRUCK_IMG from "../../assets/truck.png";
 import { COMMON_CONSTANTS } from "../../constants/common/commonConstants";
 import { slideUp, staggerContainer, fadeIn } from "../../utils/animations";
+import { useTranslation } from "react-i18next";
 
 const Features = () => {
+    const { t } = useTranslation();
+
     return (
         <>
             <motion.div
@@ -31,7 +34,7 @@ const Features = () => {
                                     transition={{ duration: 0.3 }}
                                 />
                                 <h2 className="text-2xl font-bold">
-                                    FAST SERVICE
+                                    {t('FAST SERVICE')}
                                 </h2>
                             </div>
                         </motion.div>
@@ -40,7 +43,7 @@ const Features = () => {
                             variants={slideUp}
                         >
                             <p>
-                                Free Delivery Now On Your First Order and over
+                                {t('Free Delivery Now On Your First Order and over')}
                                 {COMMON_CONSTANTS.currency} 200
                             </p>
                         </motion.div>
@@ -49,7 +52,7 @@ const Features = () => {
                             variants={slideUp}
                         >
                             <h2 className="text-2xl font-bold">
-                                - STARTING FROM Only {COMMON_CONSTANTS.currency}{" "}
+                                {t('STARTING FROM Only')} {COMMON_CONSTANTS.currency}{" "}
                                 200*
                             </h2>
                         </motion.div>

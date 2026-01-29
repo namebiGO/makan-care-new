@@ -36,33 +36,9 @@ const Header = () => {
                                     </Link>
                                 </li>
                                 <li className="mx-2">
-                                    <Link to={"/help-center"}>
+                                    <Link to={"/tracking"}>
                                         Order Tracking
                                     </Link>
-                                </li>
-                                <li className="mx-2">
-                                    <Dropdown
-                                        options={languageItems}
-                                        showSelectedLabel={false}
-                                        selected={languageItems[0]}
-                                        onSelect={() =>
-                                            console.log("on select")
-                                        }
-                                        icon={languageItems[0].icon}
-                                        label={languageItems[0].label}
-                                    />
-                                </li>
-                                <li className="mx-2">
-                                    <Dropdown
-                                        options={currencyItems}
-                                        showSelectedLabel={false}
-                                        selected={currencyItems[0]}
-                                        onSelect={() =>
-                                            console.log("on select")
-                                        }
-                                        icon={currencyItems[0].icon}
-                                        label={currencyItems[0].label}
-                                    />
                                 </li>
                             </ul>
                         </div>

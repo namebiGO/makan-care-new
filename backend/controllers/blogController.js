@@ -1,8 +1,18 @@
 const Blog = require('../models/Blog');
+const mongoose = require('mongoose');
 
 // Get all blogs
 const getAllBlogs = async (req, res) => {
     try {
+        // Check if MongoDB is connected
+        if (mongoose.connection.readyState !== 1) {
+            return res.status(200).json({
+                success: true,
+                data: [],
+                message: 'Database not connected. Returning empty blogs list.',
+            });
+        }
+
         const blogs = await Blog.find({ isPublished: true }).sort({ date: -1 });
         res.status(200).json({
             success: true,

@@ -1,8 +1,18 @@
 const Service = require('../models/Service');
+const mongoose = require('mongoose');
 
 // Get all services
 const getAllServices = async (req, res) => {
     try {
+        // Check if MongoDB is connected
+        if (mongoose.connection.readyState !== 1) {
+            return res.status(200).json({
+                success: true,
+                data: [],
+                message: 'Database not connected. Returning empty services list.',
+            });
+        }
+
         const services = await Service.find({ isActive: true });
         res.status(200).json({
             success: true,

@@ -16,6 +16,7 @@ export const services = [
     {
         id: uuidv4(),
         title: "Gardening",
+        image: BANNER_GARDENING_1,
         description:
             "Transform your outdoor space with our expert gardening services! Whether you need regular lawn maintenance, professional tree care, or a complete landscape makeover, we've got you covered. Our team ensures your garden stays lush, vibrant, and pest-free all year round. We use eco-friendly techniques and the latest equipment to enhance your green space, making it both beautiful and functional. From small backyard gardens to large estates, we bring expertise and creativity to every project.",
         subcategories: [
@@ -57,6 +58,7 @@ export const services = [
     {
         id: uuidv4(),
         title: "Electrician",
+        image: BANNER_ELECTRICIAN_1,
         description:
             "Safe and reliable electrical work is crucial for any home or business. Our skilled electricians provide top-quality services, from wiring to lighting installations, ensuring that your electrical systems function efficiently and safely. We use high-quality materials and follow the latest industry standards to prevent electrical hazards and improve energy efficiency. Whether you need repairs, upgrades, or new installations, our team is ready to assist you with expertise and professionalism.",
         subcategories: [
@@ -98,6 +100,7 @@ export const services = [
     {
         id: uuidv4(),
         title: "Plumbing",
+        image: BANNER_PLUMBING_1,
         description:
             "Leaky pipes, clogged drains, or water heater issues? Our professional plumbing services ensure your home or business runs smoothly without unexpected disruptions. We handle everything from small repairs to complete installations with precision and reliability. Using high-quality materials and advanced techniques, we deliver long-lasting solutions for all your plumbing needs.",
         subcategories: [
