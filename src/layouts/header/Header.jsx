@@ -5,7 +5,7 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import LOGO from "../../assets/logo.png";
 import CART_ICON from "../../assets/cart.png";
 import HEART_ICON from "../../assets/heart.png";
-import Dropdown from "../../components/Dropdown/Dropdown";
+import Dropdown from "../../components/dropdown/Dropdown";
 
 import ROCKET_IMG from "../../assets/inter-logo.png";
 import HAMBURGER_IMG from "../../assets/Hamburger.png";
